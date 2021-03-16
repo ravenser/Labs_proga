@@ -1,0 +1,63 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    Лабораторні роботи
+    </ion-title>
+    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title class="ion_title_font">
+      Лабораторна робота №2
+    </ion-title>
+    <ion-title class="ion_title_font">
+      Панченко В.В КН-31 Варіант:20 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p class="p_background">Необхідно додати у розроблений в попередній лабораторній роботі застосунок сторінку 
+        для візуалізації графічних даних відповідно до варіанту та головне меню для переходів між сторінками. 
+        Застосунок повинен містити дві сторінки для кожного з завдань. Створити додаток для табулювання і виведення 
+        на екран значення функції, також побудувати графік функції. Вирази для функції f1 (x), f2 (x) і f3 (x) 
+        вибрати з таблиці. У формі передбачити поля для введення значення параметра а і змінної х, виведення
+        результату обчислення y, а також кнопки для здійснення розрахунку. Вирази для функції f1 (x), f2 (x) 
+        і f3 (x) вибрати з таблиці.</p>
+    </ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Xn</ion-label>
+      <ion-input type="number" value="-2" #inputXn></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Xk</ion-label>
+      <ion-input type="number" value="5" #inputXk></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">a</ion-label>
+      <ion-input type="number" value="3" #inputa></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">h</ion-label>
+      <ion-input type="number" value="0.1" #inputh></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)= "chartCalc (inputXn.value, inputXk.value, inputa.value, inputh.value)"> Обчислити</ion-button>
+    <ion-item>
+      <canvas #lineCanvas></canvas>
+    </ion-item>
+  </ion-card>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №2</ion-title>
+  </ion-toolbar>
+</ion-footer>
