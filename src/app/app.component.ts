@@ -36,6 +36,10 @@ export class AppComponent {
         title : 'Лаюораторна робота №3',
         url : '/lab3',
       },
+      {
+        title : 'Лаюораторна робота №4',
+        url : '/lab4',
+      },
     ];
   }
 }

@@ -1,0 +1,83 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    Лабораторні роботи
+    </ion-title>
+    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title class="ion_title_font">
+      Лабораторна робота №4
+    </ion-title>
+    <ion-title class="ion_title_font">
+      Панченко В.В КН-31 Варіант:20(5) 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <pre class="p_background">
+  Необхідно додати у розроблений в попередній лабораторній роботі застосунок сторінку для роботи з абстрактними класами. Сторінку викликати у головному меню застосунку.
+Кожна сторінка повинна містити:
+        • "шапку", що включає ПІБ студента, номер групи і номер варіанту;
+        • текст завдання;
+        • форму для введення початкових значень.
+Результати роботи програми повинні відображатися на кожній сторінці окремо.
+Завдання по роботі з абстрактними класами:
+Завдання 1. Скласти програму з абстрактним батьківським класом і двома об'єктами – нащадками.
+Реалізувати циклічне виведення параметрів об'єктів, використовуючи поліморфний контейнер - масив об'єктів базового класу (кількість об'єктів> = 5)
+Завдання 2. Виконати обрахунки відповідно до варіанту</pre>
+<ion-label>Легковий автомобіль</ion-label>
+<ion-item>
+  <ion-label>Назва: </ion-label>
+  <ion-input type='text' value='BMV' #inputnamel></ion-input>
+  <ion-label>Об'єм двигуна: </ion-label>
+  <ion-input type='number' value='6' #inputVl></ion-input>
+</ion-item>
+<ion-item>
+<ion-button  expand ="block" (click)="AddLight(inputnamel.value, inputVl.value)">
+  додати
+</ion-button>
+</ion-item>
+<ion-label>Вантажівка</ion-label>
+<ion-item>
+  <ion-label>Назва: </ion-label>
+  <ion-input type='text' value='ZIL' #inputnameF></ion-input>
+  <ion-label>Вантажопід'ємність: </ion-label>
+  <ion-input type='number' value='3' #inputCarrF></ion-input>
+</ion-item>
+<ion-item>
+<ion-button expand ="block" (click)="AddFreight(inputnameF.value,inputCarrF.value)">
+  додати
+</ion-button>
+</ion-item>
+<h4>Результати</h4>
+<ion-item>
+  <pre>Витрачено {{FuelCounting()}}          </pre>
+  
+  <ion-button expand ="block" (click)="ClearCar()">
+    Очистити
+  </ion-button>
+  </ion-item>
+<p *ngFor="let car of Cars">
+  {{car.show()}}
+</p>
+
+    </ion-card-content> 
+  </ion-card>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №4</ion-title>
+  </ion-toolbar>
+</ion-footer>
