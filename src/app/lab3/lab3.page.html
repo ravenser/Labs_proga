@@ -1,0 +1,81 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    Лабораторні роботи
+    </ion-title>
+    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title class="ion_title_font">
+      Лабораторна робота №3
+    </ion-title>
+    <ion-title class="ion_title_font">
+      Панченко В.В КН-31 Варіант:20(6) 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <pre class="p_background">
+Необхідно додати у розроблений в попередній лабораторній роботі застосунок сторінку для обробки JSON файлу отриманого з серверу. Сторінку викликати у головному меню застосунку.
+Кожна сторінка повинна містити:
+• "шапку", що включає ПІБ студента, номер групи і номер варіанту;
+• текст завдання;
+• форму для введення початкових значень.
+Результати роботи програми повинні відображатися на кожній сторінці окремо.
+
+Перелік груп:
+        • Найменування групи.
+        • Курс.
+        • Староста.
+        • Кількість студентів.
+Запит. Позначити кольором групи, де кількість студентів менше за введене у форму значення.
+      </pre>
+      <ion-item >
+        <ion-label position="floating">Бажаєма кількість студентів:</ion-label>
+        <ion-input  type="number" value= "10" #inputnumber></ion-input>       
+        <ion-button expand = "block" (click) = "setNumber(inputnumber.value)"> Ввести </ion-button>
+      </ion-item>
+      <ion-button expand ="block" (click)="load()"> Переглнути </ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of data; index as i" detail (click) = "toggleDetails(i)">
+            <ion-lable *ngIf="!showDetails[i]" text-wrap>
+              <p [ngStyle]= "{color:getGreenColor(i)}">Назва: {{item.name}}</p>
+            </ion-lable>
+            <ion-text *ngIf="showDetails[i]">
+              <ion-text>
+                <h2 [ngStyle]= "{color:getGreenColor(i)}">Назва: {{item.name}} </h2>
+              </ion-text>
+              <ion-text>
+                <h2> Староста: {{item.headman}} </h2>
+              </ion-text>
+              <ion-text>
+                <h2> Курс: {{item.course}} </h2>
+              </ion-text>
+              <ion-text>
+                <h2> Кількість студентів:{{item.studquontity}} </h2>
+              </ion-text>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №3</ion-title>
+  </ion-toolbar>
+</ion-footer>

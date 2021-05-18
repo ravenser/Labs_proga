@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'lab2',
     loadChildren: () => import('./lab2/lab2.module').then( m => m.Lab2PageModule)
+  },
+  {
+    path: 'lab3',
+    loadChildren: () => import('./lab3/lab3.module').then( m => m.Lab3PageModule)
   }
 ];
 
