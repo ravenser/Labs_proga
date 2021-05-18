@@ -50,7 +50,7 @@ abstract class Car{
 }
 
 
-class FreightCar extends Car{
+export class FreightCar extends Car{
   carrying: number;
 
   constructor(public name: string, carrying: number){
@@ -67,7 +67,7 @@ class FreightCar extends Car{
   }
 }
 
-class LightCar extends Car{
+export class LightCar extends Car{
   Vengine: number;
 
   constructor(public name:string, Vengine: number){

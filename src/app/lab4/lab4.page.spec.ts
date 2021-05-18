@@ -1,24 +1,39 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import {LightCar, FreightCar} from './lab4.page'
+//import {exception} from "console"
 
-import { Lab4Page } from './lab4.page';
+describe('LightCar Testing', ()=>{
+    let lightCar:LightCar;
+    beforeEach(()=>{
+        lightCar = new LightCar("Audi", 20);
+    })
+    fit("Створення екземпляру класу легкового авто", ()=>{
+        expect(lightCar).toBeTruthy();
+    })
 
-describe('Lab4Page', () => {
-  let component: Lab4Page;
-  let fixture: ComponentFixture<Lab4Page>;
-
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ Lab4Page ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(Lab4Page);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    fit("Розрахунок витрат палива", ()=>{
+        lightCar.FuelWasting();
+        let fuel = lightCar.FuelWasting();
+        let testFuel = 2.5 * lightCar.Vengine;
+        expect(fuel.toFixed(2)).toBe(testFuel.toFixed(2));
+    })
 });
+
+describe('FreightCar Testing', ()=>{
+    let freightCar:FreightCar;
+    beforeEach(()=>
+    {
+        freightCar = new FreightCar("ZIL",100);
+    })
+
+    fit("Створення екземпляру класу вантажівки", ()=>{
+        expect(freightCar).toBeTruthy();
+    })
+
+    fit("Розрахунок витрат палива", ()=>{
+        freightCar.FuelWasting();
+        let fuel = freightCar.FuelWasting();
+        let testFuel = 100*freightCar.carrying;
+        expect(fuel.toFixed(2)).toBe(testFuel.toFixed(2));
+    })
+})
+
