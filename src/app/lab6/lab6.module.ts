@@ -4,19 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Lab1task2PageRoutingModule } from './lab1task2-routing.module';
+import { Lab6PageRoutingModule } from './lab6-routing.module';
 
-import { Lab1task2Page } from './lab1task2.page';
+import { Lab6Page } from './lab6.page';
 
 import {LabsHeaderComponent} from './../labs-header/labs-header.component'
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Lab1task2PageRoutingModule
+    Lab6PageRoutingModule
   ],
-  declarations: [Lab1task2Page, LabsHeaderComponent]
+  declarations: [Lab6Page, LabsHeaderComponent]
 })
-export class Lab1task2PageModule {}
+export class Lab6PageModule {}

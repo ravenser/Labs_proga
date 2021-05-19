@@ -1,0 +1,83 @@
+<app-labs-header name = "Лабораторна робота №6" variant = "6"></app-labs-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <pre class="p_background">
+        Необхідно додати у розроблений в попередній лабораторній роботі застосунок сторінку для роботи з інтерфейсами. Сторінку викликати у головному меню застосунку.
+Кожна сторінка повинна містити:
+      • "шапку", що включає ПІБ студента, номер групи і номер варіанту;
+      • текст завдання;
+      • форму для введення початкових значень.
+Результати роботи програми повинні відображатися на кожній сторінці окремо.
+Завдання по оформленню:
+Перенести шапку застосунку з викликом меню навігації у окремий компонент.
+Завдання по роботі з інтерфейсами:
+      1. Розробити ієрархію класів відповідно до варіанту завдання(у запропоновану у варіанті ієрархію класів можна додавати додаткові класи або інтерфейси). Деякі з класів можуть бути абстрактними.
+      2. Реалізувати для ієрархії механізм
+інтерфейсів, при цьому один з класів повинен реалізовувати як мінімум
+два інтерфейси.
+      3. Кожен клас з ієрархії класів повинен мати не менше двох методів.
+      4. Розроблена ієрархія повинна відповідати основним принципам SOLID та патерну High Cohesion + Low Coupling
+Для перевірки роботи розроблених класів та їх методів необхідно використовувати Unit тести. Необхідно протестувати:
+      • створення усіх класів
+      • усі методи класів
+      </pre>
+      <ion-label>Журнал</ion-label>
+        <ion-item>
+          <ion-label>Назва: </ion-label>
+          <ion-input type='text' value='Young enginner' #inputnameM></ion-input>
+          <ion-label>Тираж: </ion-label>
+          <ion-input type='number' value='231' #inputPrintM></ion-input>
+          <ion-label>Картинки: </ion-label>
+          <ion-input type='text' value='Blueprints' #inputPictM></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button  expand ="block" (click)="addMagazine(inputnameM.value,inputPrintM.value,inputPictM.value)">
+            Додати
+          </ion-button>
+        </ion-item>
+        
+        <ion-label>Художня література</ion-label>
+        <ion-item>
+          <ion-label>Назва: </ion-label>
+          <ion-input type='text' value='LOTR' #inputnameF></ion-input>
+          <ion-label>Тираж: </ion-label>
+          <ion-input type='number' value='231123123' #inputPrintF></ion-input>
+          <ion-label>Жанр: </ion-label>
+          <ion-input type='text' value='Fantasy' #inputGenreF></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button  expand ="block" (click)="addBook(inputnameF.value,inputPrintF.value,inputGenreF.value)">
+            Додати
+          </ion-button>
+        </ion-item>
+
+        <ion-label>Підручники</ion-label>
+        <ion-item>
+          <ion-label>Назва: </ion-label>
+          <ion-input type='text' value='7 class math manual' #inputnameT></ion-input>
+          <ion-label>Тираж: </ion-label>
+          <ion-input type='number' value='231231' #inputPrintT></ion-input>
+          <ion-label>Тема: </ion-label>
+          <ion-input type='text' value='Math' #inputGenreT></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button  expand ="block" (click)="addBook(inputnameT.value,inputPrintT.value,inputGenreT.value)">
+            Додати
+          </ion-button>
+        </ion-item>
+  
+    </ion-card-content> 
+  </ion-card>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №6</ion-title>
+  </ion-toolbar>
+</ion-footer>

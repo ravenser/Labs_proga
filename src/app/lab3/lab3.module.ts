@@ -8,6 +8,8 @@ import { Lab3PageRoutingModule } from './lab3-routing.module';
 
 import { Lab3Page } from './lab3.page';
 
+import {LabsHeaderComponent} from './../labs-header/labs-header.component'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { Lab3Page } from './lab3.page';
     IonicModule,
     Lab3PageRoutingModule
   ],
-  declarations: [Lab3Page]
+  declarations: [Lab3Page, LabsHeaderComponent]
 })
 export class Lab3PageModule {}
