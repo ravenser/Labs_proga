@@ -48,6 +48,10 @@ export class AppComponent {
         title : 'Лаюораторна робота №7',
         url : '/lab7',
       },
+      {
+        title : 'Лаюораторна робота №8',
+        url : '/lab8',
+      }
     ];
   }
 }
