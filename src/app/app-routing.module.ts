@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'lab6',
     loadChildren: () => import('./lab6/lab6.module').then( m => m.Lab6PageModule)
+  },
+  {
+    path: 'lab7',
+    loadChildren: () => import('./lab7/lab7.module').then( m => m.Lab7PageModule)
   }
 ];
 

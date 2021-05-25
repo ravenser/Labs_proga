@@ -1,0 +1,58 @@
+<app-labs-header name = "Лабораторна робота №7" variant = "9"></app-labs-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <pre class="p_background">
+        Необхідно додати у розроблений в попередній лабораторній роботі застосунок сторінку для роботи з сервісами. Сторінку викликати у головному меню застосунку.
+Кожна сторінка повинна містити:
+  • "шапку", що включає ПІБ студента, номер групи і номер варіанту;
+  • текст завдання;
+  • форму для введення початкових значень.
+Результати роботи програми повинні відображатися на кожній сторінці окремо.
+Завдання по роботі з сервісами:
+  1. Розробити сервіс для табулювання функції відповідно до варіанту
+  2. Розробити сервіс для розрахунку значень функції за допомогою ряду відповідно до варіанту
+  3. Розробити сервіс для розрахунку значень функції за допомогою рекурсії відповідно до варіанту
+  4. Розробити сервіс для логування обчислених значень у консоль та використати його у попередніх трьох сервісах
+  5. У основному застосунку підключити сервіси, вивести результати усіх розрахунків та побудувати графіки для усіх обрахунків.
+Для перевірки роботи розроблених сервісів необхідно використовувати Unit тести. Необхідно протестувати:
+• проведення розрахунків
+      </pre>
+      <div class='img_formula'></div>
+      <ion-label>Данні</ion-label>
+        <ion-item>
+          <ion-label>xStart </ion-label>
+          <ion-input value='-3.14' #inputxStart></ion-input>
+          <ion-label>xEnd </ion-label>
+          <ion-input value='3.14' #inputxEnd></ion-input>
+          <ion-label>h </ion-label>
+          <ion-input value='0.1' #inputh></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button  expand ="block" (click)="ras(inputxStart.value,inputxEnd.value,inputh.value)">
+            Додати
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <canvas #lineCanvas1></canvas>
+        </ion-item>
+        <ion-item>
+          <canvas #lineCanvas2></canvas>
+        </ion-item>
+        <ion-item>
+          <canvas #lineCanvas3></canvas>
+        </ion-item>
+    </ion-card-content> 
+  </ion-card>
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №6</ion-title>
+  </ion-toolbar>
+</ion-footer>
