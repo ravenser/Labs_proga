@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "theateractor": {
+      "hosting": {
+        "app": [
+          "theateractor"
+        ]
+      }
+    }
+  }
+}

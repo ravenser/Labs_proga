@@ -4,13 +4,21 @@ import {Theater} from "./theater.service"
   providedIn: 'root'
 })
 export class TheaterList {
-TheaterLst = new Map();
-  constructor() {
-    this.TheaterLst.set(0,{id:0, name:"Shevchenko"});
-    this.TheaterLst.set(1,{id:1, name:"Filarmonia"});
-   }
+TheaterLst = new Array();
+  constructor() {}
   add(theater:Theater)
   {
-    this.TheaterLst.set(theater.id,{id:theater.id, name:theater.name});
+    this.TheaterLst.push(theater);
+  }
+  rmTheater(theat:Theater){
+    let ind = -1;
+    for( let i=0; i< this.TheaterLst.length; i++)
+    {
+      if (this.TheaterLst[i].name == theat.name && this.TheaterLst[i].id == theat.id)
+      {
+        ind = i;
+      }
+    }
+    this.TheaterLst.splice(ind,1);
   }
 }

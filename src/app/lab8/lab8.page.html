@@ -34,19 +34,35 @@
             {{theat.name}}
         </ion-label>
       </ion-item>
-      <ion-item *ngFor="let actor of actorlst.searchActorResult; let j = index">
-            {{actor}}
-      </ion-item>
+      <ion-card *ngFor="let actor of actorlst.searchActor; let j = index">
+        <ion-card *ngIf="!showDetails[j]" text-wrap>
+            <ion-item> {{actor.name}} </ion-item>
+            <ion-item> {{actor.age}}</ion-item>
+            <ion-item> {{actor.spectacle}}</ion-item>
+            <ion-button (click) = "toggleDetailsOn(j)">Подробиці</ion-button>
+        </ion-card>
+        <ion-card *ngIf="showDetails[j]"> 
+          <ion-item> <ion-input value = "{{actor.name}}" #name></ion-input></ion-item>
+          <ion-item> <ion-input value = "{{actor.age}}"  #age></ion-input></ion-item>
+          <ion-item> <ion-input value = "{{actor.spectacle}}" #spectacle></ion-input></ion-item>
+          <ion-button (click) = "redactActor(actor, name.value, age.value, spectacle.value, j)">Редагувати</ion-button>
+          <ion-button (click) = "deleteActor(actor, j)">Видалити</ion-button>
+        </ion-card>
+      </ion-card>
       <ion-item>
         <ion-label position="stacked">Ввіедіть новий театр</ion-label>
-        <ion-input #inputTheater></ion-input>
-        <ion-button (click) = "addTheater(inputTheater.value)"> Додати театр </ion-button>
+        <ion-input value = "{{theat.name}}"#inputTheater></ion-input>
+        <ion-card>
+          <ion-button (click) = "addTheater(inputTheater.value)"> Додати театр </ion-button>
+          <ion-button (click) = "redactTheater(inputTheater.value)"> Редагувати театр </ion-button>
+          <ion-button (click) = "deleteTheater()"> Видалити театр </ion-button>
+        </ion-card>
       </ion-item>
       <ion-card>
         <ion-card-header>
-          <ion-card-tittle>
+          <ion-card-title>
             Додати актора
-          </ion-card-tittle>
+          </ion-card-title>
         </ion-card-header>
       </ion-card>
       <ion-card-content>

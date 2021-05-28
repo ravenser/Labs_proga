@@ -1,0 +1,26 @@
+{ "Actor":
+  [
+    {
+      "idTheater": "0",
+      "name": "Ivan",
+      "age": "27",
+      "spectacle": "Romeo and Juliet"
+    },
+    {
+      "idTheater": "1",
+      "name": "Dima",
+      "age": "22",
+      "spectacle": "Faust"
+    }
+    ],
+  "Theater":
+  [
+    {
+      "name": "Shevchenko", 
+      "id":"0"
+    },
+    {"name": "Filarmonia",
+      "id":"1"
+    }
+  ]
+}

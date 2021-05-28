@@ -24,4 +24,4 @@ export class ConfigService {
 
 var theaterList = new TheaterList();
 
-const DEFAULT_THEATER =  theaterList.TheaterLst.get(0);
+const DEFAULT_THEATER =  {"id":0, "name":"Shevchenko"};
